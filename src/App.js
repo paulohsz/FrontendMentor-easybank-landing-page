@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Grid, Button, Menu } from 'semantic-ui-react'
+import { Container, Grid, Button, Menu, Header, Card, Image } from 'semantic-ui-react'
 import './App.css';
 
 class App extends Component {
@@ -29,10 +29,10 @@ class App extends Component {
         <Container>
           <Grid relaxed>
             <Grid.Row verticalAlign="middle">
-              <Grid.Column width={5}>
+              <Grid.Column width={5} textAlign="left">
                 <img src="/images/logo.svg" width="139" height="20" alt="Logo"/>
               </Grid.Column>
-              <Grid.Column width={6} className="menu-link">
+              <Grid.Column width={6} className="menu-link" verticalAlign="bottom">
                 <Menu pointing secondary compact>
           <Menu.Item
             name='home'
@@ -62,7 +62,7 @@ class App extends Component {
 
         </Menu>
               </Grid.Column>
-              <Grid.Column width={5}>
+              <Grid.Column width={5} textAlign="right">
                 <Button  className="menu-button">Request Invite</Button>
               </Grid.Column>
             </Grid.Row>
@@ -70,73 +70,111 @@ class App extends Component {
         </Container>
       </Grid.Row>
 
-      <Grid.Row>
-      <Grid.Column>
-          1
-        </Grid.Column>
-        <Grid.Column>
-          2
-        </Grid.Column>
-        <Grid.Column>
-          3
-        </Grid.Column>
-        <Grid.Column>
-          4
-        </Grid.Column>
-        <Grid.Column>
-          5
-        </Grid.Column>
-        <Grid.Column>
-          6
-        </Grid.Column>
-        <Grid.Column>
-          7
-        </Grid.Column>
-        <Grid.Column>
-          8
-        </Grid.Column>        
-        <Grid.Column>
-          9
-        </Grid.Column>
-        <Grid.Column>
-          10
-        </Grid.Column>
-        <Grid.Column>
-          11
-        </Grid.Column>
-        <Grid.Column>
-          12
-        </Grid.Column>
-        <Grid.Column>
-          13
-        </Grid.Column>
-        <Grid.Column>
-          14
-        </Grid.Column>
-        <Grid.Column>
-          15
-        </Grid.Column>
-        <Grid.Column>
-          16
-        </Grid.Column>
+      <Grid.Row className="text-information">
+        <Container>
+          <Grid stackable>
+              <Grid.Row>
+                <Grid.Column width={10} textAlign="left">
+                  <Header as="h3">Why choose Easybank?</Header>
+We leverage Open Banking to turn your bank account into your financial hub.<br />
+Control your finances like never before.
+                </Grid.Column>
+                <Grid.Column width={6}>
+                  <p />
+                </Grid.Column>
+              </Grid.Row>
+
+              <Grid.Row columns={4} textAlign="left">
+                <Grid.Column>
+                <img src="/images/icon-online.svg" alt="Icon Online"/>
+                <Header as="h4">Online Bank</Header>
+                Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.
+                </Grid.Column>
+                <Grid.Column>
+                <img src="/images/icon-budgeting.svg" alt="Icon Online"/>
+                <Header as="h4">Simple Budgeting</Header>
+                See exactly where your money goes each month. Receive notifications when you’re close to hitting your limits.
+                </Grid.Column>
+                <Grid.Column>
+                <img src="/images/icon-onboarding.svg" alt="Icon Online"/>
+                <Header as="h4">Fast Onboarding</Header>
+                We don’t do branches. Open your account in minutes online and start taking control of your finances right away.
+                </Grid.Column>
+                <Grid.Column>
+                <img src="/images/icon-api.svg" alt="Icon Online"/>
+                <Header as="h4">Open API</Header>
+                Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.
+                </Grid.Column>
+              </Grid.Row>
+          </Grid>
+        </Container>
       </Grid.Row>
 
-      <Grid.Row columns={5}>
-        <Grid.Column>
-          1
-        </Grid.Column>
-        <Grid.Column>
-          2
-        </Grid.Column>
-        <Grid.Column>
-          3
-        </Grid.Column>
-        <Grid.Column>
-          4
-        </Grid.Column>
-        <Grid.Column>
-          5
-        </Grid.Column>
+      <Grid.Row className="text-articles">
+        <Container>
+          <Grid stackable>
+
+              <Grid.Row>
+                <Grid.Column width={10} textAlign="left">
+                  <Header as="h3" className="articles-title">Latest Articles</Header>
+                </Grid.Column>
+                <Grid.Column width={6}>
+                  <p />
+                </Grid.Column>
+              </Grid.Row>
+
+              <Grid.Row columns={4} textAlign="left">
+                <Grid.Column>
+                <Card>
+                  <Image src='/images/image-currency.jpg' wrapped ui={false} />
+                  <Card.Content>
+                    <Card.Header>By Claire Robinson</Card.Header>
+                    <Card.Meta>Receive money in any currency with no fees</Card.Meta>
+                    <Card.Description>
+                    The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+                <Grid.Column>
+                <Card>
+                  <Image src='/images/image-restaurant.jpg' wrapped ui={false} />
+                  <Card.Content>
+                    <Card.Header>By Wilson Hutton</Card.Header>
+                    <Card.Meta>Treat yourself without worrying about money</Card.Meta>
+                    <Card.Description>
+                    Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you …
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+                <Grid.Column>
+                <Card>
+                  <Image src='/images/image-plane.jpg' wrapped ui={false} />
+                  <Card.Content>
+                    <Card.Header>By Wilson Hutton</Card.Header>
+                    <Card.Meta>Take your Easybank card wherever you go</Card.Meta>
+                    <Card.Description>
+                    We want you to enjoy your travels. This is why we don’t charge any fees on purchases while you’re abroad. We’ll even show you …
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+                <Grid.Column>
+                <Card>
+                  <Image src='/images/image-confetti.jpg' wrapped ui={false} />
+                  <Card.Content>
+                    <Card.Header>By Claire Robinson</Card.Header>
+                    <Card.Meta>Our invite-only Beta accounts are now live!</Card.Meta>
+                    <Card.Description>
+                    After a lot of hard work by the whole team, we’re excited to launch our closed beta. It’s easy to request an invite through the site ...
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+              </Grid.Row>
+          </Grid>
+        </Container>
       </Grid.Row>
 
       <Grid.Row className="attribution">
