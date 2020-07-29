@@ -41,6 +41,7 @@ body {
   color: var(--Grayish-Blue) !important;
   font-weight: 400 !important;
   padding-bottom: 26px !important;
+  transition: color 150ms ease-in-out !important;
 }
 .ui.secondary.pointing.menu .active.item,
 .ui.secondary.pointing.menu .item:hover {
@@ -100,6 +101,11 @@ border-top: 0px;
   padding-bottom: 3px;
   cursor: pointer;
 }
+.footer-main {
+  top: 10px !important;
+  padding-top: 34px !important;
+  padding-bottom: 0px !important;
+}
 .text-articles .ui.card .meta:hover, 
 .ui.cards>.card .meta:hover {
   color: var(--Lime-Green) !important;
@@ -109,12 +115,74 @@ border-top: 0px;
   font-weight: 400 !important;
   color: var(--Grayish-Blue) !important;
 }
+.footer-pag {
+  background-color: var(--Dark-Blue);
+}
+.footer-menu-list {
+  display: inline-block !important;
+  margin: 0 80px 0 0 !important;
+}
+.footer-menu-list a {
+  color: var(--White) !important;
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  margin: 10px 0px !important;
+  transition: color 150ms ease-in-out;
+}
 
+.footer-pag .footer-all-rights {
+  color: var(--Grayish-Blue);
+  font-size: 0.9rem !important;
+  padding-top: 20px !important;
+}
+.footer-menu-list a:hover {
+  color: var(--Lime-Green) !important;
+}
+.footer-menu {
+  top: -10px;
+}
+.footer-img {
+  margin-bottom: 30px;
+}
+.footer-pag i.icon  {
+  color: var(--White) !important;
+  transition: color 150ms ease-in-out;
+}
+.footer-pag i.icon:hover {
+  color: var(--Lime-Green) !important;
+}
 .attribution {
   font-size: 0.8rem; 
   text-align: center;
+  color: var(--White);
 }
 .attribution a { 
-  color: hsl(228, 45%, 44%);  
+  color: var(--White);  
   margin-left: 3px;
+}
+.attribution a:hover { 
+  color: var(--Grayish-Blue);
+}
+
+
+@media only screen and (max-width: 767px) {
+  .ui.grid>.row>[class*="right aligned"].column.column,
+  .ui.grid>[class*="right aligned"].column.column,
+  .ui.grid>[class*="right aligned"].row>.column,
+  .ui[class*="right aligned"].grid>.column,
+  .ui[class*="right aligned"].grid>.row>.column,
+  .ui.grid>.row>[class*="left aligned"].column.column,
+  .ui.grid>[class*="left aligned"].column.column,
+  .ui.grid>[class*="left aligned"].row>.column, 
+  .ui[class*="left aligned"].grid>.column, 
+  .ui[class*="left aligned"].grid>.row>.column {
+    text-align: center !important;
+  }
+  .attribution {
+    margin-top: 15px;
+  }
+  .footer-menu-list {
+    display: block !important;
+    margin: 0px !important;
+  }
 }

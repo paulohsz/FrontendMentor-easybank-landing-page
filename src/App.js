@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Grid, Button, Menu, Header, Card, Image } from 'semantic-ui-react'
+import { Segment, Container, Grid, Button, Menu, Header, Card, Image, Responsive, List, Icon } from 'semantic-ui-react'
 import './App.css';
 
 class App extends Component {
@@ -22,10 +22,11 @@ class App extends Component {
     const { activeItem } = this.state;
 
     return (
-      <div>
+      <Segment>
     <Grid centered>
 
       <Grid.Row className="menu">
+      <Responsive minWidth={768} >
         <Container>
           <Grid relaxed>
             <Grid.Row verticalAlign="middle">
@@ -68,42 +69,50 @@ class App extends Component {
             </Grid.Row>
           </Grid>
         </Container>
+        </Responsive>
       </Grid.Row>
 
       <Grid.Row className="text-information">
         <Container>
           <Grid stackable>
               <Grid.Row>
-                <Grid.Column width={10} textAlign="left">
-                  <Header as="h3">Why choose Easybank?</Header>
-We leverage Open Banking to turn your bank account into your financial hub.<br />
-Control your finances like never before.
-                </Grid.Column>
-                <Grid.Column width={6}>
-                  <p />
+                <Grid.Column textAlign="left">
+                    <Container>
+                      <Header as="h3">Why choose Easybank?</Header>
+                      We leverage Open Banking to turn your bank account into your financial hub.<br />
+                      Control your finances like never before.
+                    </Container>
                 </Grid.Column>
               </Grid.Row>
 
               <Grid.Row columns={4} textAlign="left">
                 <Grid.Column>
-                <img src="/images/icon-online.svg" alt="Icon Online"/>
-                <Header as="h4">Online Bank</Header>
-                Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.
+                  <Container>
+                    <img src="/images/icon-online.svg" alt="Icon Online"/>
+                    <Header as="h4">Online Bank</Header>
+                    Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.
+                  </Container>
                 </Grid.Column>
                 <Grid.Column>
-                <img src="/images/icon-budgeting.svg" alt="Icon Online"/>
-                <Header as="h4">Simple Budgeting</Header>
-                See exactly where your money goes each month. Receive notifications when you’re close to hitting your limits.
+                  <Container>
+                    <img src="/images/icon-budgeting.svg" alt="Icon Online"/>
+                    <Header as="h4">Simple Budgeting</Header>
+                    See exactly where your money goes each month. Receive notifications when you’re close to hitting your limits.
+                  </Container>
                 </Grid.Column>
                 <Grid.Column>
-                <img src="/images/icon-onboarding.svg" alt="Icon Online"/>
-                <Header as="h4">Fast Onboarding</Header>
-                We don’t do branches. Open your account in minutes online and start taking control of your finances right away.
+                  <Container>
+                    <img src="/images/icon-onboarding.svg" alt="Icon Online"/>
+                    <Header as="h4">Fast Onboarding</Header>
+                    We don’t do branches. Open your account in minutes online and start taking control of your finances right away.
+                  </Container>
                 </Grid.Column>
                 <Grid.Column>
-                <img src="/images/icon-api.svg" alt="Icon Online"/>
-                <Header as="h4">Open API</Header>
-                Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.
+                  <Container>
+                    <img src="/images/icon-api.svg" alt="Icon Online"/>
+                    <Header as="h4">Open API</Header>
+                    Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.
+                  </Container>
                 </Grid.Column>
               </Grid.Row>
           </Grid>
@@ -112,7 +121,7 @@ Control your finances like never before.
 
       <Grid.Row className="text-articles">
         <Container>
-          <Grid stackable>
+          <Grid stackable centered>
 
               <Grid.Row>
                 <Grid.Column width={10} textAlign="left">
@@ -125,7 +134,7 @@ Control your finances like never before.
 
               <Grid.Row columns={4} textAlign="left">
                 <Grid.Column>
-                <Card>
+                <Card centered>
                   <Image src='/images/image-currency.jpg' wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>By Claire Robinson</Card.Header>
@@ -137,7 +146,7 @@ Control your finances like never before.
                 </Card>
                 </Grid.Column>
                 <Grid.Column>
-                <Card>
+                <Card centered>
                   <Image src='/images/image-restaurant.jpg' wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>By Wilson Hutton</Card.Header>
@@ -149,7 +158,7 @@ Control your finances like never before.
                 </Card>
                 </Grid.Column>
                 <Grid.Column>
-                <Card>
+                <Card centered>
                   <Image src='/images/image-plane.jpg' wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>By Wilson Hutton</Card.Header>
@@ -161,7 +170,7 @@ Control your finances like never before.
                 </Card>
                 </Grid.Column>
                 <Grid.Column>
-                <Card>
+                <Card centered>
                   <Image src='/images/image-confetti.jpg' wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>By Claire Robinson</Card.Header>
@@ -171,24 +180,59 @@ Control your finances like never before.
                     </Card.Description>
                   </Card.Content>
                 </Card>
+                <Responsive maxWidth={767} style={{height: "8px"}}>
+                </Responsive>
                 </Grid.Column>
               </Grid.Row>
           </Grid>
         </Container>
       </Grid.Row>
 
-      <Grid.Row className="attribution">
-          Challenge by
-          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer" >Frontend Mentor</a>.
-          Coded by
-          <a href="https://www.linkedin.com/in/paulohsz/" target="_blank" rel="noopener noreferrer" >Paulo Henrique Stocco Zancanaro</a> .
+      <Grid.Row className="footer-pag">
+        <Container>
+          <Grid stackable centered>
+            <Grid.Row className="footer-main">
+              <Grid.Column width={4} textAlign="left">
+                <img className="footer-img" src="/images/logo-white.svg" width="139" height="20" alt="Logo"/><br />
+                <a href="/" ><Icon name='facebook official' size='big' /></a>
+                <a href="/" ><Icon name='youtube square' size='big' /></a>
+                <a href="/" ><Icon name='twitter' size='big' /></a>
+                <a href="/" ><Icon name='pinterest' size='big' /></a>
+                <a href="/" ><Icon name='instagram' size='big' /></a>
+              </Grid.Column>
+              <Grid.Column width={8} className="footer-menu" textAlign="left">
+                <List link  className="footer-menu-list">
+                  <List.Item as='a'>About Us</List.Item>
+                  <List.Item as='a'>Contact</List.Item>
+                  <List.Item as='a'>Blog</List.Item>
+                </List>
+            
+                <List link className="footer-menu-list">
+                  <List.Item as='a'>Careers</List.Item>
+                  <List.Item as='a'>Support</List.Item>
+                  <List.Item as='a'>Privacy Policy</List.Item>
+                </List>
+
+              </Grid.Column>
+              <Grid.Column width={4} textAlign="right">
+                <Button  className="menu-button">Request Invite</Button><br />
+                <div className="footer-all-rights">© Easybank. All Rights Reserved</div>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Container className="attribution">    
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer" >Frontend Mentor</a>. Coded by<a href="https://www.linkedin.com/in/paulohsz/" target="_blank" rel="noopener noreferrer" >Paulo Henrique Stocco Zancanaro</a>.
+            </Container>
+            </Grid.Row>
+          </Grid>
+          </Container>
       </Grid.Row>
     </Grid>
 
 
 
 
-    </div>
+    </Segment>
     );
   }
 }
