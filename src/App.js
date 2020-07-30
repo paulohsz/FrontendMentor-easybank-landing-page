@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Segment, Container, Grid, Button, Menu, Header, Card, Image, Responsive, List, Icon } from 'semantic-ui-react'
+import { Segment, Container, Grid, Button, Menu, Header, Card, Image, Dimmer, List, Icon } from 'semantic-ui-react'
 import './App.css';
 
 class App extends Component {
@@ -9,31 +9,34 @@ class App extends Component {
 
     this.stateInicial = {
       activeItem: '',
+      menuMobile: false,
     };
 
     this.state = this.stateInicial;
 
   }
 
+
+  handleItemClickMenuMobile = (e) => this.setState({menuMobile: !this.state.menuMobile})
+
   handleItemClickMenu = (e, { name }) => this.setState({activeItem: name})
 
   render() {
 
-    const { activeItem } = this.state;
+    const { activeItem, menuMobile } = this.state;
 
     return (
       <Segment>
     <Grid centered>
 
-      <Grid.Row className="menu">
-      <Responsive minWidth={768} >
+      <Grid.Row className="menu" only='tablet computer'>
         <Container>
           <Grid relaxed>
             <Grid.Row verticalAlign="middle">
-              <Grid.Column width={5} textAlign="left">
+              <Grid.Column width={4} textAlign="left">
                 <img src="/images/logo.svg" width="139" height="20" alt="Logo"/>
               </Grid.Column>
-              <Grid.Column width={6} className="menu-link" verticalAlign="bottom">
+              <Grid.Column width={8} className="menu-link" verticalAlign="bottom">
                 <Menu pointing secondary compact>
           <Menu.Item
             name='home'
@@ -63,15 +66,45 @@ class App extends Component {
 
         </Menu>
               </Grid.Column>
-              <Grid.Column width={5} textAlign="right">
+              <Grid.Column width={4} textAlign="right" className="space-button">
                 <Button  className="menu-button">Request Invite</Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>
-        </Responsive>
       </Grid.Row>
+      <Grid.Row only='mobile'>
+          <Grid className="menu-mobile">
+              <Grid.Row verticalAlign="middle">
+          <Grid.Column width={8} textAlign="left" id="mobile-logo">
+              <img src="/images/logo.svg" width="139" height="20" alt="Logo"/>
+          </Grid.Column>
+          <Grid.Column  width={8} textAlign="right" id="mobile-bar">
+            <img src={`/images/icon-${menuMobile ? 'close' : 'hamburger'}.svg`} alt ="Menu mobile" onClick={this.handleItemClickMenuMobile}  />
+          </Grid.Column>
+          </Grid.Row>
+          </Grid>
+      </Grid.Row>
+    </Grid>
 
+    <Dimmer.Dimmable as={Grid} dimmed={menuMobile} className="mobile-menu">
+    <Dimmer
+            active={menuMobile}
+            onClickOutside={this.handleItemClickMenuMobile}
+            verticalAlign='top'
+          >
+            <Container className="menu-mobile-float">
+                <List link>
+                  <List.Item as='a'>Home</List.Item>
+                  <List.Item as='a'>About Us</List.Item>
+                  <List.Item as='a'>Contact</List.Item>
+                  <List.Item as='a'>Blog</List.Item>
+                  <List.Item as='a'>Careers</List.Item>
+                </List>
+              </Container>
+          </Dimmer>
+
+    <Grid centered>
       <Grid.Row className="text-information">
         <Container>
           <Grid stackable>
@@ -180,8 +213,7 @@ class App extends Component {
                     </Card.Description>
                   </Card.Content>
                 </Card>
-                <Responsive maxWidth={767} style={{height: "8px"}}>
-                </Responsive>
+
                 </Grid.Column>
               </Grid.Row>
           </Grid>
@@ -192,7 +224,7 @@ class App extends Component {
         <Container>
           <Grid stackable centered>
             <Grid.Row className="footer-main">
-              <Grid.Column width={4} textAlign="left">
+              <Grid.Column width={4} textAlign="left" className="footer-pag-right">
                 <img className="footer-img" src="/images/logo-white.svg" width="139" height="20" alt="Logo"/><br />
                 <a href="/" ><Icon name='facebook official' size='big' /></a>
                 <a href="/" ><Icon name='youtube square' size='big' /></a>
@@ -214,7 +246,7 @@ class App extends Component {
                 </List>
 
               </Grid.Column>
-              <Grid.Column width={4} textAlign="right">
+              <Grid.Column width={4} textAlign="right" className="space-button">
                 <Button  className="menu-button">Request Invite</Button><br />
                 <div className="footer-all-rights">© Easybank. All Rights Reserved</div>
               </Grid.Column>
@@ -228,10 +260,7 @@ class App extends Component {
           </Container>
       </Grid.Row>
     </Grid>
-
-
-
-
+    </Dimmer.Dimmable>
     </Segment>
     );
   }

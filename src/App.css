@@ -12,14 +12,21 @@ body {
   font: 18px 'Public Sans', sans-serif !important;
   /*background-color: var(--Dark-Blue) !important;*/
 }
+.mobile-menu .ui.grid {
+  margin-top: 0px !important;
+}
+
 .menu {
   background-color: var(--White);
 }
-.menu .ui.container {
-  padding-top: 14px !important;
-}
 .menu .ui.grid>.row {
   padding: 0px;
+}
+.menu-mobile-float {
+  background-color: var(--White);
+  width: 200px !important;
+  border-radius: 14px;
+  padding: 10px 50px;
 }
 .menu-button {
   opacity: 1;
@@ -29,8 +36,12 @@ body {
   font-weight: 700 !important;
   padding: 14px 36px !important;
 }
+
 .ui.compact.menu .item:last-child {
   border-radius: 0px !important;
+}
+.space-button{
+  padding-left: 0px !important;
 }
 .menu-button:hover {  
   opacity: 0.5;
@@ -60,6 +71,7 @@ body {
 .text-articles {
   background-color: var(--Very-Light-Gray);
   font-family:'Public Sans', sans-serif !important;
+  padding: 44px 0px !important;
 }
 .text-articles h3,
 .text-information h3 {
@@ -151,6 +163,9 @@ border-top: 0px;
 .footer-pag i.icon:hover {
   color: var(--Lime-Green) !important;
 }
+.footer-pag-right {
+  padding: 0px !important;
+}
 .attribution {
   font-size: 0.8rem; 
   text-align: center;
@@ -163,9 +178,25 @@ border-top: 0px;
 .attribution a:hover { 
   color: var(--Grayish-Blue);
 }
-
+div#mobile-bar i.icon  {
+  color: var(--Dark-Blue) !important;
+}
+div#mobile-bar img {
+  cursor: pointer;
+}
+.menu-mobile-float .ui.link.list a.item,
+.menu-mobile-float .link.list a.item:hover {
+  color: var(--Dark-Blue) !important;
+}
 
 @media only screen and (max-width: 767px) {
+  div#mobile-logo  {
+    text-align: left !important;
+  }
+
+  div#mobile-bar  {
+    text-align: right !important;
+  }
   .ui.grid>.row>[class*="right aligned"].column.column,
   .ui.grid>[class*="right aligned"].column.column,
   .ui.grid>[class*="right aligned"].row>.column,
@@ -184,5 +215,8 @@ border-top: 0px;
   .footer-menu-list {
     display: block !important;
     margin: 0px !important;
+  }
+  .menu-mobile {
+    width: 100% !important;
   }
 }
