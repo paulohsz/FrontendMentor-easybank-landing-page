@@ -213,7 +213,7 @@ class App extends Component {
               <Grid.Row columns={4} textAlign="left">
                 <Grid.Column>
                 <Card centered>
-                  <Image src='/images/image-currency.jpg' wrapped ui={false} />
+                  <Image src='/images/image-currency.jpg' wrapped ui={false} alt="Money" />
                   <Card.Content>
                     <Card.Header>By Claire Robinson</Card.Header>
                     <Card.Meta>Receive money in any currency with no fees</Card.Meta>
@@ -225,7 +225,7 @@ class App extends Component {
                 </Grid.Column>
                 <Grid.Column>
                 <Card centered>
-                  <Image src='/images/image-restaurant.jpg' wrapped ui={false} />
+                  <Image src='/images/image-restaurant.jpg' wrapped ui={false} alt="Restaurant"/>
                   <Card.Content>
                     <Card.Header>By Wilson Hutton</Card.Header>
                     <Card.Meta>Treat yourself without worrying about money</Card.Meta>
@@ -237,7 +237,7 @@ class App extends Component {
                 </Grid.Column>
                 <Grid.Column>
                 <Card centered>
-                  <Image src='/images/image-plane.jpg' wrapped ui={false} />
+                  <Image src='/images/image-plane.jpg' wrapped ui={false} alt="Airplane"/>
                   <Card.Content>
                     <Card.Header>By Wilson Hutton</Card.Header>
                     <Card.Meta>Take your Easybank card wherever you go</Card.Meta>
@@ -249,7 +249,7 @@ class App extends Component {
                 </Grid.Column>
                 <Grid.Column>
                 <Card centered>
-                  <Image src='/images/image-confetti.jpg' wrapped ui={false} />
+                  <Image src='/images/image-confetti.jpg' wrapped ui={false} alt="Confetti" />
                   <Card.Content>
                     <Card.Header>By Claire Robinson</Card.Header>
                     <Card.Meta>Our invite-only Beta accounts are now live!</Card.Meta>
@@ -271,11 +271,11 @@ class App extends Component {
             <Grid.Row className="footer-main">
               <Grid.Column width={4} textAlign="left" className="footer-pag-right">
                 <img className="footer-img" src="/images/logo-white.svg" width="139" height="20" alt="Logo"/><br />
-                <a href="/" ><Icon name='facebook official' size='big' /></a>
-                <a href="/" ><Icon name='youtube square' size='big' /></a>
-                <a href="/" ><Icon name='twitter' size='big' /></a>
-                <a href="/" ><Icon name='pinterest' size='big' /></a>
-                <a href="/" ><Icon name='instagram' size='big' /></a>
+                <a href="/facebook" ><Icon name='facebook official' size='big' /></a>
+                <a href="/youtube" ><Icon name='youtube square' size='big' /></a>
+                <a href="/twitter" ><Icon name='twitter' size='big' /></a>
+                <a href="/pinterest" ><Icon name='pinterest' size='big' /></a>
+                <a href="/instagram" ><Icon name='instagram' size='big' /></a>
               </Grid.Column>
               <Grid.Column width={8} className="footer-menu" textAlign="left">
                 <List link  className="footer-menu-list">
