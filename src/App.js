@@ -79,8 +79,8 @@ class App extends Component {
           <Grid.Column width={8} textAlign="left" id="mobile-logo">
               <img src="/images/logo.svg" width="139" height="20" alt="Logo"/>
           </Grid.Column>
-          <Grid.Column  width={8} textAlign="right" id="mobile-bar">
-            <img src={`/images/icon-${menuMobile ? 'close' : 'hamburger'}.svg`} alt ="Menu mobile" onClick={this.handleItemClickMenuMobile}  />
+          <Grid.Column  width={8} textAlign="right" verticalAlign="middle" id="mobile-bar">
+            <img src={`/images/icon-${menuMobile ? 'close' : 'hamburger'}.svg`} alt ="Menu mobile" onClick={this.handleItemClickMenuMobile}   />
           </Grid.Column>
           </Grid.Row>
           </Grid>
@@ -105,6 +105,51 @@ class App extends Component {
           </Dimmer>
 
     <Grid centered>
+
+    <Grid.Row className="text-next-row" only='tablet computer'>
+      <Grid stackable className="text-next">
+        <Grid.Row className="text-next-row" verticalAlign="middle">
+
+          <Grid.Column textAlign="left" width="8" className="text-next-row">
+            <div className="text-next-information">
+            <Header as="h2">Next generation digital banking</Header>
+            Take your financial life online. Your Easybank account will be a one-stop-shop 
+            for spending, saving, budgeting, investing, and much more.
+            <Button  className="menu-button">Request Invite</Button>
+            </div>
+          </Grid.Column>
+
+          <Grid.Column textAlign="left" width="8" className="text-next-row text-next-background">
+            <div className="text-next-img">
+            </div>
+          </Grid.Column>
+
+        </Grid.Row>
+      </Grid>
+      </Grid.Row>
+
+      <Grid.Row only='mobile' className="next-mobile">
+        <Container>
+          <Grid centered>
+
+            <Grid.Row className="next-mobile-background" >
+              <div className="next-mobile-img">
+              </div>
+            </Grid.Row>
+
+            <Grid.Row className="next-mobile-row">
+              <Container>
+              <Header as="h2">Next generation digital banking</Header>
+              Take your financial life online. Your Easybank account will be a one-stop-shop 
+              for spending, saving, budgeting, investing, and much more.<br />
+              <Button  className="menu-button">Request Invite</Button>
+              </Container>
+            </Grid.Row>
+
+          </Grid>
+        </Container>
+      </Grid.Row>
+
       <Grid.Row className="text-information">
         <Container>
           <Grid stackable>
