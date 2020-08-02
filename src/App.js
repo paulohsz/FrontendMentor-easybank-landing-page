@@ -104,7 +104,7 @@ class App extends Component {
               </Container>
           </Dimmer>
 
-    <Grid centered>
+    <Grid centered className="main-home">
 
     <Grid.Row className="text-next-row" only='tablet computer'>
       <Grid stackable className="text-next">
@@ -271,23 +271,11 @@ class App extends Component {
             <Grid.Row className="footer-main">
               <Grid.Column width={4} textAlign="left" className="footer-pag-right">
                 <img className="footer-img" src="/images/logo-white.svg" width="139" height="20" alt="Logo"/><br />
-                <Menu fluid compact borderless widths={5} id="footer-social">
-                <Menu.Item fitted>
-                  <Icon name='facebook official' size='big' />
-                </Menu.Item>
-                <Menu.Item fitted>
-                <Icon name='youtube square' size='big' />
-                </Menu.Item>
-                <Menu.Item fitted>
-                <Icon name='twitter' size='big' />
-                </Menu.Item>
-                <Menu.Item fitted>
-                <Icon name='pinterest' size='big' />
-                </Menu.Item>
-                <Menu.Item fitted>
-                <Icon name='instagram' size='big' />
-                </Menu.Item>
-                </Menu>
+                <a href="/" ><Icon name='facebook official' size='big' /></a>
+                <a href="/" ><Icon name='youtube square' size='big' /></a>
+                <a href="/" ><Icon name='twitter' size='big' /></a>
+                <a href="/" ><Icon name='pinterest' size='big' /></a>
+                <a href="/" ><Icon name='instagram' size='big' /></a>
               </Grid.Column>
               <Grid.Column width={8} className="footer-menu" textAlign="left">
                 <List link  className="footer-menu-list">
