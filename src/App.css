@@ -16,9 +16,7 @@ body {
   margin-top: 0px !important;
 }
 
-.menu {
-  background-color: var(--White);
-}
+
 .menu .ui.grid>.row {
   padding: 0px;
 }
@@ -36,7 +34,18 @@ body {
   font-weight: 700 !important;
   padding: 14px 36px !important;
 }
-
+div#footer-social.ui.menu {
+  background: none !important;
+}
+div#footer-social.ui.menu.fluid,
+div#footer-social.ui.vertical.menu.fluid,
+div#footer-social.ui.item.menu,
+div#footer-social.ui.item.menu .item {
+   width: auto !important;
+}
+div#footer-social.ui.menu .item>i.icon {
+  cursor: pointer !important;
+}
 .ui.compact.menu .item:last-child {
   border-radius: 0px !important;
 }
@@ -230,6 +239,11 @@ border-top: 0px;
 }
 .footer-pag-right {
   padding: 0px !important;
+}
+.ui.item.menu, .ui.item.menu .item {
+  width: none !important; 
+  text-align: left !important; 
+  justify-content: left !important; 
 }
 .attribution {
   font-size: 0.8rem; 
